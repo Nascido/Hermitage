@@ -13,23 +13,68 @@ Este projeto implementa uma replica frontend local das telas do State Hermitage 
 
 ## Requisitos
 
-E necessario ter Node.js e npm instalados. O projeto nao usa backend, banco de dados, variaveis de ambiente, login, containers ou APIs externas.
+Este projeto deve ser executado em container Docker.
 
-## Instalacao
+Requisitos:
+
+- Docker
+- Docker Compose
+
+Nao e necessario instalar Node.js ou npm diretamente na maquina host. O projeto nao usa backend, banco de dados, variaveis de ambiente, login, APIs externas ou chaves.
+
+## Execucao com Docker Compose
+
+Na raiz do projeto, execute:
+
+```bash
+docker compose up --build
+```
+
+Depois acesse:
+
+```text
+http://localhost:5173
+```
+
+A rota de revisao com links para todas as telas e:
+
+```text
+http://localhost:5173/__review
+```
+
+Para parar o container:
+
+```bash
+docker compose down
+```
+
+## Comandos uteis no container
+
+Para executar build:
+
+```bash
+docker compose run --rm hermitage-frontend npm run build
+```
+
+Para executar lint:
+
+```bash
+docker compose run --rm hermitage-frontend npm run lint
+```
+
+Para abrir um shell dentro do container:
+
+```bash
+docker compose run --rm hermitage-frontend sh
+```
+
+## Execucao local sem Docker
+
+O uso local sem Docker e opcional e exige Node.js/npm instalados na maquina:
 
 ```bash
 npm install
-```
-
-## Execucao
-
-```bash
 npm run dev
-```
-
-## Build e lint
-
-```bash
 npm run build
 npm run lint
 npm run preview
