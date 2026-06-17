@@ -1,0 +1,792 @@
+.institutional-header {
+  height: 80px;
+  background: var(--hermitage-header-bg);
+  color: var(--hermitage-text-light);
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 20;
+}
+
+.institutional-logo {
+  width: 190px;
+  padding-left: 22px;
+}
+
+.institutional-logo img {
+  width: 140px;
+  height: 53px;
+  object-fit: contain;
+}
+
+.menu-button {
+  height: 80px;
+  min-width: 176px;
+  border: 0;
+  background: transparent;
+  color: var(--hermitage-text-light);
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  padding: 0 32px;
+  font-size: 16px;
+}
+
+.menu-button.is-open {
+  background: var(--hermitage-menu-active);
+}
+
+.hamburger,
+.hamburger::before,
+.hamburger::after {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background: #efe9d3;
+}
+
+.hamburger {
+  position: relative;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: "";
+  position: absolute;
+  left: 0;
+}
+
+.hamburger::before {
+  top: -10px;
+}
+
+.hamburger::after {
+  top: 10px;
+}
+
+.main-menu-panel {
+  position: absolute;
+  top: 80px;
+  left: 190px;
+  width: 260px;
+  background: var(--hermitage-menu-bg);
+  padding: 12px 0;
+  z-index: 30;
+}
+
+.main-menu-panel a {
+  display: block;
+  padding: 9px 26px;
+  color: #f5f1df;
+  font-size: 12px;
+  line-height: 1.25;
+}
+
+.institutional-links {
+  margin-left: auto;
+  height: 80px;
+  display: flex;
+  align-items: center;
+}
+
+.institutional-links > a,
+.institutional-links > button {
+  height: 38px;
+  min-width: 100px;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-left: 1px solid #f2ead4;
+  background: transparent;
+  color: #f2ead4;
+  font-size: 15px;
+}
+
+.institutional-links .eye-button {
+  min-width: 84px;
+}
+
+.eye-button span {
+  width: 33px;
+  height: 20px;
+  border: 3px solid #f2ead4;
+  border-radius: 50%;
+  position: relative;
+}
+
+.eye-button span::after {
+  content: "";
+  position: absolute;
+  top: 4px;
+  left: 10px;
+  width: 7px;
+  height: 7px;
+  background: #f2ead4;
+  border-radius: 50%;
+}
+
+.institutional-links .search-link {
+  height: 58px;
+  background: #8d9995;
+  border-left: 0;
+}
+
+.institutional-links .search-icon-link {
+  min-width: 66px;
+  height: 58px;
+  padding: 0 18px;
+  background: #274d47;
+  border-left: 0;
+}
+
+.home-page {
+  background: #efe9d2;
+}
+
+.hero-slider {
+  height: 530px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #f5f0db;
+}
+
+.slider-dots {
+  position: absolute;
+  right: 8px;
+  top: 7px;
+  display: flex;
+  gap: 13px;
+  background: rgba(58, 78, 92, 0.62);
+  padding: 7px 8px;
+}
+
+.slider-dots button {
+  width: 10px;
+  height: 10px;
+  border: 0;
+  border-radius: 50%;
+  background: #7aa1b3;
+  padding: 0;
+}
+
+.slider-dots button[aria-current="true"] {
+  background: #efe9d2;
+}
+
+.slider-arrow {
+  position: absolute;
+  top: 48%;
+  width: 55px;
+  height: 55px;
+  border: 3px solid #fff;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.35);
+  color: #fff;
+  font-size: 54px;
+  line-height: 36px;
+}
+
+.slider-arrow.left {
+  left: 14px;
+}
+
+.slider-arrow.right {
+  right: 14px;
+}
+
+.hero-title-band {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 16px 44px 10px;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.hero-title-band h1 {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 64px;
+  line-height: 1.05;
+}
+
+.hero-title-band p {
+  margin: 8px 0 0;
+  font-size: 28px;
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding: 6px 8px;
+}
+
+.visit-card,
+.whats-on-card {
+  min-height: 315px;
+  color: #fff;
+  padding: 25px 36px;
+}
+
+.visit-card {
+  background: #00aa7a;
+}
+
+.visit-card h2,
+.whats-on-card h2 {
+  margin: 0 0 14px;
+  font-size: 59px;
+  line-height: 1.05;
+  font-weight: 400;
+}
+
+.visit-card p,
+.whats-on-card p {
+  margin: 10px 0;
+  font-size: 17px;
+}
+
+.whats-on-card {
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.whats-on-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.whats-on-card > * {
+  position: relative;
+}
+
+.wide-banner,
+.search-banner,
+.tickets-banner {
+  height: 218px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.wide-banner span {
+  position: absolute;
+  left: 30px;
+  bottom: 12px;
+  background: rgba(0, 0, 0, 0.45);
+  color: #e7e2d6;
+  padding: 4px 10px;
+  font-size: 27px;
+}
+
+.virtual-page,
+.museum-map-page {
+  background: var(--hermitage-content-bg);
+}
+
+.virtual-content,
+.map-intro {
+  padding: 28px 30px 38px;
+}
+
+.virtual-content h1,
+.map-intro h1 {
+  margin: 0 0 10px;
+  font-size: 44px;
+  line-height: 1.15;
+  font-weight: 400;
+  color: #244b59;
+}
+
+.virtual-content p {
+  margin: 0 0 24px;
+  color: #244b59;
+}
+
+.tour-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(180px, 1fr));
+  gap: 6px;
+  max-width: 800px;
+}
+
+.tour-card {
+  min-height: 116px;
+  background-size: cover;
+  background-position: center;
+  color: #fff;
+  padding: 12px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tour-card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(25, 52, 61, 0.55);
+}
+
+.tour-card h2,
+.tour-card small {
+  position: relative;
+}
+
+.tour-card h2 {
+  margin: 0 0 22px;
+  font-size: 13px;
+  line-height: 1.25;
+}
+
+.tour-card small {
+  font-size: 9px;
+}
+
+.shade-2::before { background: rgba(85, 105, 53, 0.58); }
+.shade-3::before { background: rgba(29, 29, 29, 0.58); }
+.shade-4::before { background: rgba(151, 97, 41, 0.58); }
+
+.select-row {
+  display: flex;
+  gap: 5px;
+  margin: 24px 0 64px;
+}
+
+.select-row select {
+  min-width: 330px;
+  height: 52px;
+  border: 0;
+  color: #efe9d2;
+  background: #7298a6;
+  padding: 0 42px 0 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.select-row label + label select {
+  background: #355b68;
+}
+
+.museum-map-image {
+  width: 1160px;
+  max-width: calc(100vw - 60px);
+}
+
+.room-directory {
+  background: var(--hermitage-content-bg);
+  padding: 18px 28px 42px;
+  color: #2f373b;
+}
+
+.legend-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px 22px;
+  max-width: 900px;
+  margin-bottom: 18px;
+  font-size: 12px;
+}
+
+.legend-grid span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.legend-grid i {
+  width: 90px;
+  height: 9px;
+  display: inline-block;
+}
+
+.room-directory ol {
+  columns: 3;
+  margin: 0;
+  padding-left: 18px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.room-directory li span {
+  display: inline-block;
+  width: 32px;
+  color: #4e5a60;
+}
+
+.institutional-footer {
+  min-height: 168px;
+  background: #000;
+  color: #fff;
+  padding: 28px 70px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: start;
+  gap: 24px;
+  font-size: 10px;
+}
+
+.social-row {
+  display: flex;
+  gap: 6px;
+}
+
+.social-row a,
+.app-badges span {
+  border: 1px solid #777;
+  padding: 4px 6px;
+  color: #fff;
+}
+
+.institutional-footer nav {
+  display: flex;
+  gap: 18px;
+  justify-content: center;
+}
+
+.app-badges {
+  display: flex;
+  gap: 8px;
+  justify-content: end;
+}
+
+.search-page {
+  min-height: calc(100vh - 80px);
+  background: var(--hermitage-search-bg);
+  color: #e9e6db;
+}
+
+.search-banner {
+  height: 216px;
+}
+
+.search-content {
+  padding: 32px 34px 70px;
+}
+
+.search-content h1 {
+  margin: 0 0 28px;
+  font-size: 45px;
+  font-weight: 400;
+}
+
+.search-content h1 span {
+  display: inline-flex;
+  width: 20px;
+  height: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-left: 4px;
+  border: 1px solid #e9e6db;
+  border-radius: 50%;
+  font-size: 15px;
+  vertical-align: top;
+}
+
+.site-search-form {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 60px;
+}
+
+.site-search-form input {
+  width: 675px;
+  height: 44px;
+  border: 0;
+  background: var(--hermitage-search-field);
+  color: #fff;
+  padding: 0 12px;
+}
+
+.site-search-form button {
+  width: 40px;
+  height: 44px;
+  border: 0;
+  background: #244b59;
+}
+
+.site-search-form .magnifier {
+  width: 20px;
+  height: 20px;
+  border-width: 3px;
+}
+
+.site-search-form p {
+  margin: 0 0 0 40px;
+}
+
+.site-search-form a {
+  text-decoration: underline;
+}
+
+.results-count {
+  margin: 0 0 15px;
+  font-size: 17px;
+}
+
+.category-chips {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 1400px;
+  margin-bottom: 30px;
+}
+
+.category-chips button {
+  background: transparent;
+  color: #eeeade;
+  border: 1px solid #e2e0d4;
+  padding: 8px 10px;
+  font-size: 18px;
+}
+
+.category-chips strong {
+  margin-left: 10px;
+}
+
+.result-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(360px, 1fr));
+  gap: 38px 44px;
+}
+
+.search-result {
+  display: grid;
+  grid-template-columns: 236px 1fr;
+  gap: 16px;
+}
+
+.search-result img {
+  width: 236px;
+  height: 176px;
+  object-fit: contain;
+  border: 3px solid #d6d2c5;
+  background: #0f2b30;
+}
+
+.search-result h2 {
+  margin: 0 0 18px;
+  font-size: 20px;
+  line-height: 1.4;
+  font-weight: 400;
+}
+
+.search-result dl {
+  display: grid;
+  grid-template-columns: 105px 1fr;
+  gap: 8px 12px;
+  margin: 0;
+  color: #d2d0c7;
+}
+
+.search-result dt {
+  color: #a8a9a5;
+}
+
+.artwork-search .site-search-form {
+  margin-bottom: 18px;
+}
+
+.advanced-form {
+  width: 640px;
+  margin-bottom: 26px;
+}
+
+.advanced-form h2 {
+  font-size: 14px;
+  font-weight: 400;
+  margin: 0 0 10px;
+}
+
+.advanced-form label {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.advanced-form label span {
+  display: block;
+  font-size: 11px;
+  color: #b7c3c5;
+}
+
+.advanced-form input {
+  width: 100%;
+  height: 26px;
+  border: 0;
+  background: var(--hermitage-search-field);
+  color: #fff;
+  padding: 0 8px;
+  font-size: 12px;
+}
+
+.button-row button {
+  height: 28px;
+  margin-right: 8px;
+  border: 1px solid #d6d2c5;
+  background: #172631;
+  color: #e9e6db;
+  font-size: 11px;
+}
+
+.result-grid.compact {
+  grid-template-columns: repeat(2, minmax(320px, 1fr));
+}
+
+.artwork-detail-page {
+  background: #fff;
+}
+
+.artwork-viewer {
+  height: 520px;
+  background: #191919;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.artwork-viewer img {
+  max-height: 470px;
+  width: auto;
+}
+
+.artwork-viewer button {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  border: 0;
+  background: transparent;
+  color: #bbb;
+}
+
+.artwork-title-area {
+  padding: 20px 34px 32px;
+  border-bottom: 1px solid #e5e5e5;
+}
+
+.artwork-title-area p {
+  margin: 0 0 8px;
+  font-size: 11px;
+}
+
+.artwork-title-area h1 {
+  max-width: 760px;
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 27px;
+  line-height: 1.25;
+}
+
+.artwork-meta-area {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 80px;
+  padding: 24px 34px 50px;
+  max-width: 1160px;
+}
+
+.artwork-meta-area dl {
+  margin: 0;
+}
+
+.artwork-meta-area dl div {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 20px;
+  padding: 7px 0;
+  border-bottom: 1px solid #efefef;
+  font-size: 12px;
+}
+
+.artwork-meta-area dt {
+  color: #444;
+}
+
+.artwork-meta-area dd {
+  margin: 0;
+  color: #5b8a97;
+}
+
+.artwork-meta-area h2 {
+  margin: 0 0 10px;
+  font-size: 13px;
+}
+
+.tickets-info-page {
+  background: #fff;
+  min-height: calc(100vh - 80px);
+}
+
+.tickets-banner {
+  height: 150px;
+}
+
+.tickets-info-page section {
+  width: 680px;
+  padding: 12px 0 70px 12px;
+}
+
+.tickets-info-page h1 {
+  margin: 0 0 16px;
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: 24px;
+}
+
+.outline-cta {
+  display: inline-flex;
+  border: 1px solid #80a2aa;
+  color: #497989;
+  padding: 8px 10px;
+  font-size: 11px;
+  margin-bottom: 26px;
+}
+
+.tickets-info-page p,
+.tickets-info-page li {
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+@media (max-width: 900px) {
+  .institutional-header {
+    height: auto;
+    flex-wrap: wrap;
+  }
+
+  .institutional-links {
+    width: 100%;
+    overflow-x: auto;
+  }
+
+  .main-menu-panel {
+    left: 0;
+    top: 80px;
+  }
+
+  .hero-title-band h1 {
+    font-size: 42px;
+  }
+
+  .home-cards,
+  .result-grid,
+  .artwork-meta-area {
+    grid-template-columns: 1fr;
+  }
+
+  .tour-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .room-directory ol {
+    columns: 1;
+  }
+}

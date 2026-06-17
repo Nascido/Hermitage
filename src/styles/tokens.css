@@ -1,0 +1,15 @@
+:root {
+  --hermitage-header-bg: #000;
+  --hermitage-content-bg: #d3d7da;
+  --hermitage-menu-bg: #24483f;
+  --hermitage-menu-active: #66897b;
+  --hermitage-ticket-green: #006747;
+  --hermitage-text-primary: #142f3b;
+  --hermitage-text-light: #eeeade;
+  --hermitage-text-muted: #a7b1b4;
+  --hermitage-border: #d8d6c8;
+  --hermitage-search-bg: #182733;
+  --hermitage-search-field: #3c5661;
+  --ticket-border: #b7b7b7;
+  --ticket-panel: #eeeeee;
+}

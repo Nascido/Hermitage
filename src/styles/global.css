@@ -1,0 +1,76 @@
+body {
+  color: #1d1d1d;
+  background: #fff;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: not-allowed;
+}
+
+:focus-visible {
+  outline: 2px solid #f4e6bb;
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.magnifier {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  border: 4px solid #f5efd7;
+  border-radius: 50%;
+  position: relative;
+}
+
+.magnifier::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 4px;
+  background: #f5efd7;
+  right: -12px;
+  bottom: -7px;
+  transform: rotate(45deg);
+}
+
+.review-page {
+  max-width: 880px;
+  margin: 40px auto;
+  padding: 0 24px;
+}
+
+.review-page h1 {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.review-page li {
+  display: flex;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
+}

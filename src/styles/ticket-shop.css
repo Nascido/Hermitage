@@ -1,0 +1,495 @@
+.ticket-header {
+  background: var(--hermitage-ticket-green);
+  color: #fff;
+  min-height: 144px;
+}
+
+.ticket-topbar {
+  height: 88px;
+  max-width: 1120px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.ticket-topbar button {
+  border: 0;
+  background: transparent;
+  color: #fff;
+}
+
+.ticket-topbar button:last-child {
+  justify-self: end;
+}
+
+.ticket-logo img {
+  width: 150px;
+  height: 65px;
+  object-fit: contain;
+}
+
+.ticket-header nav {
+  max-width: 1040px;
+  height: 56px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+}
+
+.ticket-catalog-page,
+.ticket-step-page {
+  background: #fff;
+  min-height: 690px;
+  padding: 30px 0 50px;
+}
+
+.catalog-panel,
+.ticket-step-page > section,
+.back-link {
+  width: 1120px;
+  max-width: calc(100vw - 48px);
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.ticket-tabs {
+  display: flex;
+  margin-bottom: 25px;
+}
+
+.ticket-tabs button {
+  width: 164px;
+  height: 50px;
+  border: 0;
+  background: #dcdcdc;
+  color: #888;
+  font-size: 13px;
+}
+
+.ticket-tabs button[aria-selected="true"] {
+  background: var(--hermitage-ticket-green);
+  color: #fff;
+}
+
+.ticket-filters {
+  display: grid;
+  grid-template-columns: 362px 230px 1fr;
+  gap: 24px 20px;
+  align-items: center;
+  margin-bottom: 66px;
+}
+
+.ticket-filters input {
+  width: 100%;
+  height: 40px;
+  border: 1px solid #6f8278;
+  padding: 0 14px;
+}
+
+.tag-row {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 14px;
+}
+
+.tag-row button {
+  border: 1px solid #bfc3c4;
+  background: #f7f7f7;
+  padding: 5px 10px;
+  color: #222;
+}
+
+.availability-check {
+  grid-column: 3;
+  justify-self: end;
+  color: #666;
+}
+
+.availability-check input {
+  width: 20px;
+  height: 20px;
+  margin-left: 12px;
+  vertical-align: middle;
+}
+
+.ticket-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.ticket-card {
+  border: 1px solid #333;
+  background: #eee;
+  min-height: 455px;
+}
+
+.ticket-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.ticket-card div {
+  padding: 22px 24px;
+}
+
+.ticket-card h2 {
+  min-height: 72px;
+  margin: 0 0 14px;
+  font-size: 18px;
+  line-height: 1.35;
+}
+
+.ticket-card p {
+  color: #666;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.ticket-card .ticket-icon-line {
+  font-size: 12px;
+  margin: 8px 0;
+}
+
+.ticket-card div > a:last-child {
+  display: flex;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #000;
+  color: #111;
+  margin-top: 18px;
+}
+
+.back-link {
+  display: block;
+  margin-bottom: 18px;
+  color: #777;
+  font-size: 12px;
+}
+
+.ticket-product-intro {
+  position: relative;
+  max-width: 760px;
+  padding-bottom: 18px;
+}
+
+.ticket-product-intro h1 {
+  margin: 0 0 16px;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.ticket-product-intro p {
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.age-badge {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 30px;
+  height: 30px;
+  border: 1px solid #777;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.date-time-panel {
+  border-top: 1px solid #ccc;
+  padding-top: 18px;
+}
+
+.date-time-panel h2 {
+  font-size: 15px;
+  font-weight: 400;
+  margin: 18px 0 14px;
+}
+
+.date-strip,
+.time-grid {
+  display: flex;
+  gap: 4px;
+}
+
+.date-strip button {
+  width: 76px;
+  height: 70px;
+  border: 1px solid #ddd;
+  background: #fff;
+  color: #333;
+}
+
+.date-strip strong {
+  display: block;
+  font-size: 22px;
+}
+
+.date-strip span {
+  display: block;
+  font-size: 11px;
+}
+
+.date-strip button.selected,
+.time-grid button.selected {
+  background: var(--hermitage-ticket-green);
+  color: #fff;
+}
+
+.time-grid {
+  flex-wrap: wrap;
+  max-width: 780px;
+}
+
+.time-grid button {
+  width: 58px;
+  height: 32px;
+  border: 1px solid #ccc;
+  background: #fff;
+  color: #333;
+  font-size: 12px;
+}
+
+.time-grid button:disabled {
+  background: #eee;
+  color: #aaa;
+}
+
+.availability-note {
+  color: #666;
+  font-size: 11px;
+  margin-top: 12px;
+}
+
+.compact-step {
+  padding-top: 0;
+  border-top: 0;
+  margin-bottom: 14px;
+}
+
+.compact-step .date-strip button {
+  width: 56px;
+  height: 52px;
+}
+
+.quantity-panel,
+.checkout-form {
+  background: var(--ticket-panel);
+  padding: 16px 18px 24px;
+}
+
+.quantity-panel h1,
+.checkout-summary h1 {
+  margin: 0 0 14px;
+  font-size: 13px;
+}
+
+.limit-warning {
+  color: #c40000;
+  font-size: 12px;
+}
+
+.quantity-table {
+  width: 100%;
+  border-top: 1px solid #fff;
+  font-size: 12px;
+}
+
+.quantity-head,
+.quantity-row {
+  display: grid;
+  grid-template-columns: 1fr 140px 170px 140px;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 0;
+  border-bottom: 1px solid #fff;
+}
+
+.quantity-head {
+  color: #555;
+  font-weight: 700;
+}
+
+.quantity-row small {
+  display: block;
+  color: #777;
+  margin-top: 4px;
+}
+
+.stepper {
+  display: inline-flex;
+  align-items: center;
+}
+
+.stepper button,
+.stepper input {
+  width: 30px;
+  height: 26px;
+  border: 1px solid #ccc;
+  background: #fff;
+  text-align: center;
+}
+
+.stepper input {
+  width: 42px;
+  border-left: 0;
+  border-right: 0;
+}
+
+.more-categories {
+  margin: 12px 0;
+  border: 0;
+  background: transparent;
+  color: var(--hermitage-ticket-green);
+  font-size: 12px;
+}
+
+.order-total {
+  text-align: right;
+  font-weight: 700;
+}
+
+.continue-button,
+.checkout-form button[type="submit"] {
+  display: inline-flex;
+  min-width: 130px;
+  height: 36px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--hermitage-ticket-green);
+  background: var(--hermitage-ticket-green);
+  color: #fff;
+  float: right;
+}
+
+.checkout-summary {
+  margin-bottom: 14px;
+  background: var(--ticket-panel);
+  padding: 12px 18px;
+}
+
+.checkout-form {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 8px;
+  max-width: 760px;
+}
+
+.checkout-form h2 {
+  margin: 0 0 8px;
+  font-size: 14px;
+}
+
+.checkout-form label {
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.checkout-form input {
+  height: 30px;
+  border: 1px solid #d0d0d0;
+  background: #fff;
+  padding: 0 8px;
+}
+
+.checkout-form .check-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.checkout-form .check-line input {
+  width: 14px;
+  height: 14px;
+}
+
+.checkout-form button:disabled {
+  background: #ddd;
+  border-color: #ccc;
+  color: #777;
+}
+
+.field-error {
+  margin: 0;
+  color: #a10000;
+  font-size: 11px;
+}
+
+.success-message {
+  color: var(--hermitage-ticket-green);
+}
+
+.ticket-footer {
+  border-top: 1px solid #ddd;
+  padding: 28px 0 34px;
+  width: 1120px;
+  max-width: calc(100vw - 48px);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  color: #777;
+  font-size: 10px;
+}
+
+.ticket-footer a {
+  color: #0080aa;
+  display: block;
+}
+
+.ticket-socials {
+  display: flex;
+  gap: 5px;
+  margin-top: 18px;
+}
+
+.ticket-socials a {
+  width: 18px;
+  height: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #ddd;
+  color: #777;
+}
+
+@media (max-width: 900px) {
+  .ticket-header nav,
+  .ticket-card-grid,
+  .ticket-filters,
+  .quantity-head,
+  .quantity-row,
+  .ticket-footer {
+    grid-template-columns: 1fr;
+  }
+
+  .ticket-header nav {
+    height: auto;
+    flex-wrap: wrap;
+    gap: 12px;
+    padding: 12px 24px;
+  }
+
+  .ticket-filters {
+    display: grid;
+  }
+
+  .availability-check {
+    grid-column: auto;
+    justify-self: start;
+  }
+
+  .ticket-card-grid {
+    display: grid;
+  }
+}
