@@ -1,13 +1,22 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import InstitutionalLayout from "../layouts/InstitutionalLayout";
 import homePalace from "../assets/banners/home-palace.png";
 import redGallery from "../assets/banners/red-gallery.png";
+import facade from "../assets/banners/winter-palace-facade.png";
+import mapImage from "../assets/maps/main-museum-floor-1.png";
 
 const slides = [
-  { title: "Web-camera of the State Hermitage Museum", subtitle: "Online", image: homePalace },
-  { title: "The Main Museum Complex", subtitle: "Virtual visit", image: redGallery },
-  { title: "Purchase of Online Tickets", subtitle: "Tickets", image: homePalace },
+  { title: "How to visit the Hermitage", subtitle: "Plan your route, tickets and online visit", image: homePalace },
+  { title: "The Main Museum Complex", subtitle: "Virtual Visit", image: redGallery },
+  { title: "Purchase online tickets", subtitle: "Entry from 700 RUB", image: facade },
 ];
+
+const actionCards = [
+  { title: "Explore collection", text: "Search 3 million works of art", to: "/search/artworks", action: "Explore" },
+  { title: "Virtual visit", text: "Tour the museum online", to: "/virtual-visit", action: "Access" },
+  { title: "What's on", text: "Exhibitions, events and news", to: "/search?q=events", action: "View agenda" },
+] as const;
 
 export default function HomePage() {
   const [active, setActive] = useState(0);
@@ -30,15 +39,37 @@ export default function HomePage() {
             <p>{slide.subtitle}</p>
           </div>
         </section>
-        <section className="home-cards" aria-label="Museum highlights">
-          <article className="visit-card">
-            <h2>VISIT US</h2>
-            <p>ALL THE HERMITAGE'S DISPLAY FACILITIES ARE OPEN TO VISITORS</p>
-            <p>THE MUSEUM IS CLOSED ON MONDAYS, AS WELL AS 1 JANUARY AND 9 MAY</p>
+        <section className="home-actions" aria-label="Primary actions">
+          {actionCards.map((card, index) => (
+            <article className="home-action-card" key={card.title}>
+              <span className={`action-symbol symbol-${index + 1}`} aria-hidden="true" />
+              <div>
+                <h2>{card.title}</h2>
+                <p>{card.text}</p>
+              </div>
+              <Link to={card.to}>{card.action} →</Link>
+            </article>
+          ))}
+        </section>
+        <section className="visit-summary" aria-label="Visit summary">
+          <article className="ticket-summary">
+            <h2>Tickets</h2>
+            <p>Buy online from 700 RUB</p>
+            <Link to="/ticket-shop">Buy →</Link>
           </article>
-          <article className="whats-on-card" style={{ backgroundImage: `url(${redGallery})` }}>
-            <h2>WHAT'S ON<br />AT THE<br />HERMITAGE</h2>
-            <p>EXHIBITIONS, EVENTS AND NEWS</p>
+          <article className="shop-summary">
+            <h2>Shop</h2>
+            <p>Museum store online</p>
+            <a href="#shop">Access →</a>
+          </article>
+          <article className="route-summary">
+            <div>
+              <h2>Visit us</h2>
+              <p>Open Tue-Sun · 10:30-18:00</p>
+              <p>Closed Mon, 1 Jan and 9 May</p>
+              <Link to="/tickets">How to get there →</Link>
+            </div>
+            <img src={mapImage} alt="Museum area map preview" />
           </article>
         </section>
       </main>

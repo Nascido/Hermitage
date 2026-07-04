@@ -1,3 +1,5 @@
+import { useState } from "react";
+import { Link } from "react-router-dom";
 import InstitutionalFooter from "../components/institutional/InstitutionalFooter";
 import { artworks } from "../data/artworks";
 import InstitutionalLayout from "../layouts/InstitutionalLayout";
@@ -5,6 +7,7 @@ import InstitutionalLayout from "../layouts/InstitutionalLayout";
 const artwork = artworks[0];
 
 export default function ArtworkDetailsPage() {
+  const [expanded, setExpanded] = useState(false);
   const metadata = [
     ["Author", `${artwork.author} (${artwork.authorDates})`],
     ["Title", artwork.title],
@@ -22,9 +25,10 @@ export default function ArtworkDetailsPage() {
   return (
     <InstitutionalLayout footer={<InstitutionalFooter />}>
       <main className="artwork-detail-page">
+        <Link className="back-link institutional artwork-back" to="/search/artworks">← Back</Link>
         <section className="artwork-viewer" aria-label="Artwork image viewer">
           <img src={artwork.image} alt={artwork.title} />
-          <button type="button" aria-label="Full screen viewer">⤢</button>
+          <button type="button" aria-label="Full screen viewer" onClick={() => setExpanded(true)}>⤢</button>
         </section>
         <section className="artwork-title-area">
           <p>{artwork.author} ({artwork.authorDates})</p>
@@ -49,6 +53,12 @@ export default function ArtworkDetailsPage() {
             </dl>
           </aside>
         </section>
+        {expanded && (
+          <div className="viewer-modal" role="dialog" aria-modal="true" aria-label="Artwork expanded view">
+            <button type="button" aria-label="Close expanded view" onClick={() => setExpanded(false)}>×</button>
+            <img src={artwork.image} alt={artwork.title} />
+          </div>
+        )}
       </main>
     </InstitutionalLayout>
   );

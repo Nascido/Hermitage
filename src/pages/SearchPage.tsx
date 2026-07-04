@@ -1,7 +1,7 @@
 import { FormEvent, useMemo, useState } from "react";
 import { Link, useNavigate, useSearchParams } from "react-router-dom";
 import InstitutionalLayout from "../layouts/InstitutionalLayout";
-import banner from "../assets/banners/winter-palace-facade.png";
+import catThumb from "../assets/artworks/cat-thumb.png";
 import { artworks, searchCategories } from "../data/artworks";
 
 export default function SearchPage() {
@@ -19,17 +19,28 @@ export default function SearchPage() {
   return (
     <InstitutionalLayout>
       <main className="search-page">
-        <div className="search-banner" style={{ backgroundImage: `url(${banner})` }} />
         <section className="search-content">
-          <h1>Search<span aria-hidden="true">?</span></h1>
+          <h1>Search in the website</h1>
           <form className="site-search-form" onSubmit={submit}>
             <label>
               <span className="sr-only">Search query</span>
               <input value={term} onChange={(event) => setTerm(event.target.value)} placeholder="e.g. Hercules Room" />
             </label>
-            <button type="submit" aria-label="Search"><span className="magnifier" aria-hidden="true" /></button>
-            <p>or use <Link to="/search/artworks">Search works of art</Link></p>
+            <button type="submit">Search</button>
           </form>
+          <p className="search-switch">or use <Link to="/search/artworks">Website works of art</Link> para busca avançada do acervo</p>
+        </section>
+        <section className="site-results-panel">
+          <Link className="back-link institutional" to="/">← Back</Link>
+          <article className="feature-result">
+            <div>
+              <p>Published on 15 June 2026</p>
+              <h2>Hermitage Cat Day: Now Featured on the Museum Website</h2>
+              <p>The State Hermitage Museum has launched a virtual tour of the exhibitions dedicated to the Day of the Hermitage Cat, one of the most cherished spring celebrations among residents and visitors of the Northern Capital.</p>
+              <Link to="/virtual-visit">Open virtual tour →</Link>
+            </div>
+            <img src={catThumb} alt="Hermitage Cat Day preview" />
+          </article>
           <p className="results-count">1 - 10 of 40 results for «{q}»</p>
           <div className="category-chips" aria-label="Result categories">
             {searchCategories.map(([label, count]) => <button type="button" key={label}>{label} <strong>{count}</strong></button>)}

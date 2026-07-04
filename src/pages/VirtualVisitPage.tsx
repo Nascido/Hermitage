@@ -6,21 +6,33 @@ export default function VirtualVisitPage() {
   return (
     <InstitutionalLayout>
       <main className="virtual-page">
-        <div className="wide-banner" style={{ backgroundImage: `url(${galleryImage})` }}>
-          <span>VIRTUAL VISIT</span>
-        </div>
+        <section className="page-hero compact" style={{ backgroundImage: `url(${galleryImage})` }}>
+          <h1>Virtual visit</h1>
+          <p>Explore the museum from anywhere in the world</p>
+        </section>
         <section className="virtual-content">
-          <h1>All tours</h1>
-          <p>Museum Complexes</p>
-          <div className="tour-grid">
+          <Link className="back-link institutional" to="/">← Back</Link>
+          <div className="section-heading">
+            <div>
+              <h1>All tours</h1>
+              <p>Museum Complexes</p>
+            </div>
+            <div className="segmented-control" role="tablist" aria-label="Tour category">
+              <button role="tab" aria-selected="true" type="button">Museum complexes</button>
+              <button role="tab" aria-selected="false" type="button">Exhibitions</button>
+            </div>
+          </div>
+          <div className="tour-grid redesigned">
             {tourCards.map((card, index) => {
+              const available = card === "THE MAIN MUSEUM COMPLEX";
               const tile = (
-                <article className={`tour-card shade-${index % 5}`} style={{ backgroundImage: `url(${galleryImage})` }}>
+                <article className={`tour-card shade-${index % 5} ${available ? "" : "is-unavailable"}`} style={{ backgroundImage: `url(${galleryImage})` }}>
                   <h2>{card}</h2>
                   <small>{index + 3} PANORAMAS</small>
+                  <span>{available ? "Explore →" : "Unavailable"}</span>
                 </article>
               );
-              return card === "THE MAIN MUSEUM COMPLEX" ? (
+              return available ? (
                 <Link to="/virtual-visit/main-museum-complex" key={card}>{tile}</Link>
               ) : (
                 <a href="#tour" key={card}>{tile}</a>
