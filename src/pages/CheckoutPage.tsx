@@ -43,14 +43,14 @@ export default function CheckoutPage() {
           <form className="checkout-form" onSubmit={submit}>
             <Link className="back-link" to="/ticket-shop/main-museum-complex/quantity">← Back</Link>
             <h1>Seus dados</h1>
-            <label>E-mail<input required type="email" value={form.email} onChange={(event) => update("email", event.target.value)} /></label>
-            <label>Confirm e-mail<input required type="email" value={form.repeat} onChange={(event) => update("repeat", event.target.value)} aria-describedby="repeat-error" /></label>
+            <label>E-mail<input required type="email" value={form.email} onChange={(event) => update("email", event.target.value)} placeholder="email@example.com" /></label>
+            <label>Confirm e-mail<input required type="email" value={form.repeat} onChange={(event) => update("repeat", event.target.value)} placeholder="email@example.com" aria-describedby="repeat-error" /></label>
             {form.repeat && form.email !== form.repeat && <p id="repeat-error" className="field-error">E-mails must match</p>}
             <div className="checkout-name-row">
-              <label>Name<input required value={form.first} onChange={(event) => update("first", event.target.value)} /></label>
-              <label>Surname<input required value={form.last} onChange={(event) => update("last", event.target.value)} /></label>
+              <label>Name<input required value={form.first} onChange={(event) => update("first", event.target.value)} placeholder="John" /></label>
+              <label>Surname<input required value={form.last} onChange={(event) => update("last", event.target.value)} placeholder="Smith" /></label>
             </div>
-            <label>Phone<input required value={form.phone} onChange={(event) => update("phone", event.target.value)} /></label>
+            <label>Phone<input required value={form.phone} onChange={(event) => update("phone", event.target.value)} placeholder="+55 (48) 99999-9999" /></label>
             <fieldset className="checkout-consents">
               <legend className="sr-only">Purchase agreements</legend>
               <label className="check-line"><input type="checkbox" checked={form.terms} onChange={(event) => update("terms", event.target.checked)} /> I agree with the rules for purchase and public offering.</label>
