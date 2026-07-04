@@ -13,9 +13,9 @@ const slides = [
 ];
 
 const actionCards = [
-  { title: "Explore collection", text: "Search 3 million works of art", to: "/search/artworks", action: "Explore" },
-  { title: "Virtual visit", text: "Tour the museum online", to: "/virtual-visit", action: "Access" },
-  { title: "What's on", text: "Exhibitions, events and news", to: "/search?q=events", action: "View agenda" },
+  { title: "Explore collection", text: "Search 3 million works of art", to: "/search/artworks", action: "Explore", icon: "🖼️" },
+  { title: "Virtual visit", text: "Tour the museum online", to: "/virtual-visit", action: "Access", icon: "🔭" },
+  { title: "What's on", text: "Exhibitions, events and news", to: "/search?q=events", action: "View agenda", icon: "📅" },
 ] as const;
 
 export default function HomePage() {
@@ -42,7 +42,7 @@ export default function HomePage() {
         <section className="home-actions" aria-label="Primary actions">
           {actionCards.map((card, index) => (
             <article className="home-action-card" key={card.title}>
-              <span className={`action-symbol symbol-${index + 1}`} aria-hidden="true" />
+              <span className={`action-symbol symbol-${index + 1}`} aria-hidden="true">{card.icon}</span>
               <div>
                 <h2>{card.title}</h2>
                 <p>{card.text}</p>
