@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
-import { Link, useLocation } from "react-router-dom";
-import logo from "../assets/logos/hermitage-logo-ticket.png";
+import { useLocation } from "react-router-dom";
+import HermitageTopbar from "../components/shared/HermitageTopbar";
 
 export function TicketFooter() {
   return (
@@ -28,18 +28,18 @@ export default function TicketShopLayout({ children }: { children: ReactNode }) 
 
   return (
     <>
-      <header className="ticket-header">
-        <div className="ticket-topbar">
-          <Link to="/" className="ticket-menu-link">☰ Menu</Link>
-          <Link to="/ticket-shop" className="ticket-logo"><img src={logo} alt="The State Hermitage Museum" /></Link>
-          <button type="button">EN⌄</button>
-        </div>
+      <HermitageTopbar />
+      <header className="ticket-header ticket-progress-header">
         <ol className="ticket-steps" aria-label="Ticket purchase progress">
-          {steps.map((step, index) => (
-            <li key={step} className={index + 1 <= activeStep ? "is-active" : ""}>
-              <span>{index + 1}</span>{step}
-            </li>
-          ))}
+          {steps.map((step, index) => {
+            const stepNumber = index + 1;
+            const className = stepNumber === activeStep ? "is-current" : stepNumber < activeStep ? "is-complete" : "";
+            return (
+              <li key={step} className={className}>
+                <span>{stepNumber}</span>{step}
+              </li>
+            );
+          })}
         </ol>
       </header>
       {children}

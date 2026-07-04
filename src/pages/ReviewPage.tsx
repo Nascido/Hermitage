@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import InstitutionalLayout from "../layouts/InstitutionalLayout";
 
 const routes = [
   ["/", "Home"],
@@ -16,11 +17,13 @@ const routes = [
 
 export default function ReviewPage() {
   return (
-    <main className="review-page">
-      <h1>Hermitage review routes</h1>
-      <ul>
-        {routes.map(([href, label]) => <li key={href}><Link to={href}>{label}</Link><code>{href}</code></li>)}
-      </ul>
-    </main>
+    <InstitutionalLayout>
+      <main className="review-page">
+        <h1>Hermitage review routes</h1>
+        <ul>
+          {routes.map(([href, label]) => <li key={href}><Link to={href}>{label}</Link><code>{href}</code></li>)}
+        </ul>
+      </main>
+    </InstitutionalLayout>
   );
 }

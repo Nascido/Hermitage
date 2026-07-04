@@ -1,10 +1,22 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import InstitutionalFooter from "../components/institutional/InstitutionalFooter";
-import { artworks } from "../data/artworks";
+import christImage from "../assets/artworks/christ-simon-pharisee.png";
 import InstitutionalLayout from "../layouts/InstitutionalLayout";
 
-const artwork = artworks[0];
+const artwork = {
+  title: "Christ in the House of Simon the Pharisee",
+  author: "Maso di San Friano (Tommaso d'Antonio Manzuoli)",
+  authorDates: "1531-1571",
+  place: "Italy",
+  date: "mid 1560s",
+  technique: "Tempera on canvas",
+  dimensions: "42 × 33 cm",
+  collection: "Paintings",
+  inventoryNumber: "ГЭ-1234",
+  building: "The Great (Old) Hermitage",
+  room: "Room 267",
+  image: christImage,
+};
 
 export default function ArtworkDetailsPage() {
   const [expanded, setExpanded] = useState(false);
@@ -15,17 +27,16 @@ export default function ArtworkDetailsPage() {
     ["Dating", artwork.date],
     ["Technique", artwork.technique],
     ["Dimensions", artwork.dimensions],
-    ["Museum number", artwork.inventoryNumber],
-    ["Acquisition details", artwork.acquisition],
-    ["Category", artwork.category],
     ["Collection", artwork.collection],
-    ["Subcollection", artwork.subcollection],
+    ["Museum number", artwork.inventoryNumber],
   ];
 
   return (
-    <InstitutionalLayout footer={<InstitutionalFooter />}>
+    <InstitutionalLayout>
       <main className="artwork-detail-page">
-        <Link className="back-link institutional artwork-back" to="/search/artworks">← Back</Link>
+        <div className="artwork-back-row">
+          <Link className="back-link institutional artwork-back" to="/search/artworks">← Back</Link>
+        </div>
         <section className="artwork-viewer" aria-label="Artwork image viewer">
           <img src={artwork.image} alt={artwork.title} />
           <button type="button" aria-label="Full screen viewer" onClick={() => setExpanded(true)}>⤢</button>

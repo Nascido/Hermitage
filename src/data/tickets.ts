@@ -49,13 +49,13 @@ const times: TicketTime[] = [
 ];
 
 export const ticketCategories: TicketCategory[] = [
-  { id: "main", name: "Main category", description: "for one person", price: 700 },
+  { id: "main", name: "Adult", description: "Full price admission", price: 700 },
   { id: "children", name: "Children under 18", description: "for one person", price: 0 },
   { id: "cadets", name: "Cadets of educational institutions of the Russian Federation", description: "for one person", price: 0 },
   { id: "disabled", name: "Disabled persons", description: "for one person", price: 0 },
   { id: "companion", name: "Accompanying disabled person", description: "for one person", price: 0 },
-  { id: "retirees", name: "Retirees (Russian Federation and EAEU countries)", description: "for one person", price: 0 },
-  { id: "students", name: "Students", description: "for one person", price: 0 },
+  { id: "retirees", name: "Pensioner", description: "RF residents 60+", price: 0 },
+  { id: "students", name: "Student", description: "With valid student ID", price: 0 },
   { id: "employees", name: "Museum employees", description: "for one person", price: 0 },
 ];
 

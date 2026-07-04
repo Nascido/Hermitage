@@ -55,7 +55,7 @@ export default function HomePage() {
           <article className="ticket-summary">
             <h2>Tickets</h2>
             <p>Buy online from 700 RUB</p>
-            <Link to="/ticket-shop">Buy →</Link>
+            <Link to="/tickets">Buy →</Link>
           </article>
           <article className="shop-summary">
             <h2>Shop</h2>
