@@ -1199,6 +1199,113 @@
   font-size: 14px;
 }
 
+.not-implemented-page {
+  min-height: calc(100vh - 110px);
+  display: grid;
+  place-items: center;
+  background: #eee8d6;
+  color: #18313d;
+}
+
+.not-implemented-message {
+  margin-top: -18px;
+  display: grid;
+  justify-items: center;
+  text-align: center;
+}
+
+.not-implemented-spinner {
+  position: relative;
+  width: 62px;
+  height: 62px;
+  margin-bottom: 20px;
+}
+
+.not-implemented-spinner span {
+  position: absolute;
+  left: 28px;
+  top: 5px;
+  width: 6px;
+  height: 17px;
+  border-radius: 999px;
+  background: #17191b;
+  transform-origin: 3px 26px;
+}
+
+.not-implemented-spinner span:nth-child(1) {
+  transform: rotate(0deg);
+}
+
+.not-implemented-spinner span:nth-child(2) {
+  transform: rotate(30deg);
+  opacity: 0.92;
+}
+
+.not-implemented-spinner span:nth-child(3) {
+  transform: rotate(60deg);
+  opacity: 0.84;
+}
+
+.not-implemented-spinner span:nth-child(4) {
+  transform: rotate(90deg);
+  opacity: 0.76;
+}
+
+.not-implemented-spinner span:nth-child(5) {
+  transform: rotate(120deg);
+  opacity: 0.68;
+}
+
+.not-implemented-spinner span:nth-child(6) {
+  transform: rotate(150deg);
+  opacity: 0.6;
+}
+
+.not-implemented-spinner span:nth-child(7) {
+  transform: rotate(180deg);
+  opacity: 0.52;
+}
+
+.not-implemented-spinner span:nth-child(8) {
+  transform: rotate(210deg);
+  opacity: 0.44;
+}
+
+.not-implemented-spinner span:nth-child(9) {
+  transform: rotate(240deg);
+  opacity: 0.36;
+}
+
+.not-implemented-spinner span:nth-child(10) {
+  transform: rotate(270deg);
+  opacity: 0.28;
+}
+
+.not-implemented-spinner span:nth-child(11) {
+  transform: rotate(300deg);
+  opacity: 0.2;
+}
+
+.not-implemented-spinner span:nth-child(12) {
+  transform: rotate(330deg);
+  opacity: 0.12;
+}
+
+.not-implemented-message h1 {
+  margin: 0 0 16px;
+  color: #18313d;
+  font-size: 24px;
+  line-height: 1.15;
+  font-weight: 800;
+}
+
+.not-implemented-message p {
+  margin: 0;
+  color: #18313d;
+  font-size: 24px;
+  line-height: 1.25;
+}
+
 .ticket-steps,
 .ticket-header .ticket-steps {
   width: 100%;

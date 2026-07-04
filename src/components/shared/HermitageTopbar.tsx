@@ -10,7 +10,7 @@ const searchLinks = [
 
 const visitLinks = [
   ["Tickets", "/tickets"],
-  ["Hotel", "#hotel"],
+  ["Hotel", "/not-implemented"],
 ] as const;
 
 const exploreLinks = [
@@ -19,7 +19,12 @@ const exploreLinks = [
   ["Virtual visit", "/virtual-visit", true],
 ] as const;
 
-const infoLinks = ["What's on at the Hermitage", "Shop", "Support", "About us"];
+const infoLinks = [
+  ["What's on at the Hermitage", "/not-implemented"],
+  ["Shop", "/not-implemented"],
+  ["Support", "/not-implemented"],
+  ["About us", "/not-implemented"],
+] as const;
 
 export default function HermitageTopbar() {
   const [open, setOpen] = useState(false);
@@ -79,7 +84,9 @@ export default function HermitageTopbar() {
       {open && (
         <nav className="main-menu-panel ticket-main-menu-panel" id="main-menu" aria-label="Main menu">
           <div className="drawer-brand">
-            <img src={drawerLogo} alt="The State Hermitage Museum" />
+            <Link to="/" onClick={() => setOpen(false)}>
+              <img src={drawerLogo} alt="The State Hermitage Museum" />
+            </Link>
             <button type="button" aria-label="Close menu" onClick={() => setOpen(false)}>×</button>
           </div>
           <h2 className="drawer-section-title">Search</h2>
@@ -110,12 +117,12 @@ export default function HermitageTopbar() {
             </section>
             <section>
               <h2>News and information</h2>
-              {infoLinks.map((label) => <a href="#info" key={label} onClick={() => setOpen(false)}>{label}</a>)}
+              {infoLinks.map(([label, path]) => <Link to={path} key={label} onClick={() => setOpen(false)}>{label}</Link>)}
             </section>
           </div>
           <footer className="drawer-footer">
             <div className="drawer-socials" aria-label="Social links">
-              {["f", "vk", "yt", "tg", "rss"].map((item) => <a href="#social" key={item}>{item}</a>)}
+              {["f", "vk", "yt", "tg", "rss"].map((item) => <Link to="/not-implemented" key={item}>{item}</Link>)}
             </div>
             <p className="menu-copyright">© The State Hermitage Museum, 1998-2026</p>
           </footer>

@@ -1,8 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import InstitutionalLayout from "../layouts/InstitutionalLayout";
 import { galleryImage, tourCards } from "../data/virtualVisit";
 
 export default function VirtualVisitPage() {
+  const navigate = useNavigate();
+
   return (
     <InstitutionalLayout>
       <main className="virtual-page">
@@ -19,7 +21,7 @@ export default function VirtualVisitPage() {
             </div>
             <div className="segmented-control" role="tablist" aria-label="Tour category">
               <button role="tab" aria-selected="true" type="button">Museum complexes</button>
-              <button role="tab" aria-selected="false" type="button">Exhibitions</button>
+              <button role="tab" aria-selected="false" type="button" onClick={() => navigate("/not-implemented")}>Exhibitions</button>
             </div>
           </div>
           <div className="tour-grid redesigned">
@@ -35,7 +37,7 @@ export default function VirtualVisitPage() {
               return available ? (
                 <Link to="/virtual-visit/main-museum-complex" key={card}>{tile}</Link>
               ) : (
-                <a href="#tour" key={card}>{tile}</a>
+                <Link to="/not-implemented" key={card}>{tile}</Link>
               );
             })}
           </div>

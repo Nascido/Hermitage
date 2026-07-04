@@ -1,5 +1,5 @@
 import type { ReactNode } from "react";
-import { useLocation } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import HermitageTopbar from "../components/shared/HermitageTopbar";
 
 export function TicketFooter() {
@@ -9,7 +9,7 @@ export function TicketFooter() {
         <p>© 1998-2026 The State Hermitage Museum. All rights reserved</p>
         <p>Государственный Эрмитаж. Официальная система продажи билетов.</p>
         <div className="ticket-socials">
-          {["f", "vk", "ok", "yt"].map((item) => <a href="#social" key={item}>{item}</a>)}
+          {["f", "vk", "ok", "yt"].map((item) => <Link to="/not-implemented" key={item}>{item}</Link>)}
         </div>
       </div>
       <div>

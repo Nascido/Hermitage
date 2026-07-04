@@ -11,6 +11,7 @@ import TicketDatePage from "./pages/TicketDatePage";
 import TicketQuantityPage from "./pages/TicketQuantityPage";
 import CheckoutPage from "./pages/CheckoutPage";
 import ReviewPage from "./pages/ReviewPage";
+import NotImplementedPage from "./pages/NotImplementedPage";
 
 export default function App() {
   return (
@@ -26,12 +27,13 @@ export default function App() {
       <Route path="/ticket-shop/main-museum-complex" element={<TicketDatePage />} />
       <Route path="/ticket-shop/main-museum-complex/quantity" element={<TicketQuantityPage />} />
       <Route path="/ticket-shop/checkout" element={<CheckoutPage />} />
-      <Route path="/tours" element={<Navigate to="/virtual-visit" replace />} />
-      <Route path="/collection" element={<Navigate to="/search" replace />} />
-      <Route path="/collection/search" element={<Navigate to="/search/artworks" replace />} />
-      <Route path="/collection/artworks/:artworkId" element={<Navigate to="/artworks/portrait-of-burchard-richter" replace />} />
+      <Route path="/not-implemented" element={<NotImplementedPage />} />
+      <Route path="/tours" element={<Navigate to="/not-implemented" replace />} />
+      <Route path="/collection" element={<Navigate to="/not-implemented" replace />} />
+      <Route path="/collection/search" element={<Navigate to="/not-implemented" replace />} />
+      <Route path="/collection/artworks/:artworkId" element={<Navigate to="/not-implemented" replace />} />
       <Route path="/__review" element={<ReviewPage />} />
-      <Route path="*" element={<Navigate to="/" replace />} />
+      <Route path="*" element={<NotImplementedPage />} />
     </Routes>
   );
 }

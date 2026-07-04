@@ -60,7 +60,7 @@ export default function HomePage() {
           <article className="shop-summary">
             <h2>Shop</h2>
             <p>Museum store online</p>
-            <a href="#shop">Access →</a>
+            <Link to="/not-implemented">Access →</Link>
           </article>
           <article className="route-summary">
             <div>

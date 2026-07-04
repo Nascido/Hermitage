@@ -48,7 +48,7 @@ export default function SearchPage() {
           <div className="result-grid">
             {results.map((artwork, index) => (
               <article className="search-result" key={artwork.id}>
-                <Link to={index === 0 ? "/artworks/portrait-of-burchard-richter" : "#"}>
+                <Link to={index === 0 ? "/artworks/portrait-of-burchard-richter" : "/not-implemented"}>
                   <img src={artwork.thumbnail} alt={artwork.title} />
                 </Link>
                 <div>
