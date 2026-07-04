@@ -15,7 +15,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  PAGES_ARTIFACT_NAME: github-pages-${{ github.run_id }}-${{ github.run_attempt }}
+  PAGES_ARTIFACT_NAME: hermitage-pages
 
 jobs:
   build:
