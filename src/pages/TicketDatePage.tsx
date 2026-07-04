@@ -6,9 +6,9 @@ import { getOrder, getProduct, saveOrder } from "../utils/ticketOrder";
 export default function TicketDatePage() {
   const product = getProduct();
   const navigate = useNavigate();
-  const [selectedDate, setSelectedDate] = useState(getOrder().selectedDate ?? product.availableDates[0].iso);
-  const [selectedTime, setSelectedTime] = useState(getOrder().selectedTime);
-  const date = product.availableDates.find((item) => item.iso === selectedDate) ?? product.availableDates[0];
+  const [selectedDate, setSelectedDate] = useState<string | null>(getOrder().selectedDate);
+  const [selectedTime, setSelectedTime] = useState<string | null>(getOrder().selectedTime);
+  const date = product.availableDates.find((item) => item.iso === selectedDate);
 
   useEffect(() => {
     saveOrder({ ...getOrder(), productId: product.id, selectedDate, selectedTime });
@@ -43,7 +43,7 @@ export default function TicketDatePage() {
           </div>
           <h2>Select time:</h2>
           <div className="time-grid">
-            {date.times.map((time) => (
+            {date?.times.map((time) => (
               <button type="button" className={selectedTime === time.label ? "selected" : ""} disabled={!time.available} key={time.label} onClick={() => chooseTime(time.label, time.available)}>
                 {time.label}
               </button>

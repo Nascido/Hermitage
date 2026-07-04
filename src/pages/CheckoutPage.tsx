@@ -10,11 +10,11 @@ export default function CheckoutPage() {
   const count = getOrderCount(order);
   const [submitted, setSubmitted] = useState(false);
   const [form, setForm] = useState({
-    email: "email@bananinha.com",
-    repeat: "email@bananinha.com",
-    first: "Bananilson",
-    last: "Da Silva",
-    phone: "+55 (48) 98812-3456",
+    email: "",
+    repeat: "",
+    first: "",
+    last: "",
+    phone: "",
     terms: false,
     data: false,
     info: false,
