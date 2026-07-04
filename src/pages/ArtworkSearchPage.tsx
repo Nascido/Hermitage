@@ -35,11 +35,11 @@ const resultItems = [
 ];
 
 export default function ArtworkSearchPage() {
-  const [values, setValues] = useState<Record<string, string>>({ Title: "Madonna" });
+  const [values, setValues] = useState<Record<string, string>>({});
   const [searched, setSearched] = useState(false);
   const update = (field: string, value: string) => setValues((current) => ({ ...current, [field]: value }));
   const clear = () => {
-    setValues({ Title: "" });
+    setValues({});
     setSearched(false);
   };
   const submit = (event: FormEvent) => {
